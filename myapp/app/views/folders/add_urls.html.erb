@@ -1,0 +1,10 @@
+<h1>Add URLs</h1>
+
+<%= form_with do |form| %>
+  <%= form.label :urls, "URLs:" %>
+  <%= form.text_area :urls, size: '50x10' %>
+  <br>
+  <%= form.submit "Add" %>
+<% end %>
+
+<%= link_to 'Back', folders_path %>
