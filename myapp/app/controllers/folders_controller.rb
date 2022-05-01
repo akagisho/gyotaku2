@@ -22,10 +22,8 @@ class FoldersController < ApplicationController
         next if not url.match(/\A#{URI::regexp(%w(http https))}\z/)
 
         @url = Url.new(folder_id: params[:folder_id], url: url)
-        begin
-          @url.acquire_title
-        end
         @url.save
+        @url.delay.acquire_title
       end
 
       redirect_to folder_url(@folder)

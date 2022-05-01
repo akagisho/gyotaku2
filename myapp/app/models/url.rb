@@ -16,6 +16,8 @@ class Url < ApplicationRecord
       title = m[1]
       title = title.strip
       self.title = title
+      self.got_at = Time.now
+      self.save!
     end
   end
 end
