@@ -21,8 +21,8 @@
   <tbody>
     <% @urls.each do |url| %>
       <tr>
-        <td><%= url.url %></td>
-        <td><%= url.title %></td>
+        <td><%= url.url.truncate(60) %></td>
+        <td><%= if url.title then url.title.truncate(80) end %></td>
       </tr>
     <% end %>
   </tbody>
